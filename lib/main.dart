@@ -7,7 +7,24 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    Widget titleSelection = Container(
+    return MaterialApp(
+      title: 'Flutter Layout Demo',
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Flutter Layout Demo'),
+        ),
+        body: Column(
+          children: <Widget>[TitleSelection()],
+        ),
+      ),
+    );
+  }
+}
+
+class TitleSelection extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
       padding: const EdgeInsets.all(18),
       child: Row(
         children: <Widget>[
@@ -33,23 +50,12 @@ class MyApp extends StatelessWidget {
               ],
             ),
           ),
-          Icon(Icons.star, color: Colors.red,),
+          Icon(
+            Icons.star,
+            color: Colors.red,
+          ),
           Text('41')
         ],
-      ),
-    );
-
-    return MaterialApp(
-      title: 'Flutter Layout Demo',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Flutter Layout Demo'),
-        ),
-        body: Column(
-          children: <Widget>[
-            titleSelection
-          ],
-        ),
       ),
     );
   }
